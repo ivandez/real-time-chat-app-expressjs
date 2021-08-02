@@ -4,7 +4,6 @@ const form = document.querySelector('#form')
 const input = document.querySelector('#input')
 const messages = document.querySelector('#messages')
 
-console.log(messages)
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
@@ -22,5 +21,6 @@ socket.on('chat message', function (msg) {
 })
 
 socket.on('notification', (notification) => {
-  console.log(notification)
+  messages.innerHTML +=
+              '<li style="background: #ffc107">' + notification + '</li>'
 })
